@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  administration:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: administration
+    volumes:
+      - ".:/home/node/app"
+    entrypoint: ./.docker/entrypoint.sh
+    ports:
+      - "4200:4200"
+      - "9876:9876"
+      - "9229:9229"
+    environment:
+      - NODE_ENV=development
+    networks:
+      - adm-net
+
+networks:
+  adm-net:
+    driver: bridge

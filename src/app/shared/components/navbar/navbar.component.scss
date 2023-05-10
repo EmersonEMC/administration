@@ -1,0 +1,16 @@
+header {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  right: 0;
+  width: calc(100vw - 12.5rem);
+  border-bottom: 0.0625rem solid #d2d2d7;
+  height: 3.75rem;
+  padding: 0.625rem;
+
+  nav {
+    display: block;
+    width: 100%;
+  }
+}
