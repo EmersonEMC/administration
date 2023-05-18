@@ -3,6 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { first } from 'rxjs';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { FormBaseResource } from '../../shared/resources/form-base.resource';
+import { ActivatedRoute } from '@angular/router';
 
 interface LoginForm {
   email: FormControl<string | null>;
@@ -57,11 +58,19 @@ export class LoginComponent extends FormBaseResource<LoginForm> {
       .pipe(first())
       .subscribe({
         next: () => {
-          void this.router.navigate(['/dashboard']);
+          this.navigateTo();
         },
         error: (error: Error) => {
           this.error = error.message;
         },
       });
+  }
+
+  private navigateTo(): void {
+    const returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] as
+      | string
+      | undefined;
+    const url: string = returnUrl || '/dashboard';
+    void this.router.navigateByUrl(url);
   }
 }
