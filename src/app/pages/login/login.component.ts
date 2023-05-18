@@ -3,7 +3,6 @@ import { FormControl, Validators } from '@angular/forms';
 import { first } from 'rxjs';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { FormBaseResource } from '../../shared/resources/form-base.resource';
-import { ActivatedRoute } from '@angular/router';
 
 interface LoginForm {
   email: FormControl<string | null>;
