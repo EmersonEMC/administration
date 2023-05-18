@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'adm-usuarios',
   templateUrl: './usuarios.component.html',
-  styleUrls: ['./usuarios.component.scss']
+  styleUrls: ['./usuarios.component.scss'],
 })
-export class UsuariosComponent {
-
-}
+export class UsuariosComponent {}

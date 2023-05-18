@@ -1,15 +1,28 @@
 <div class="login">
-  <form>
+  <form [formGroup]="formGroup">
     <div class="logo">LOGIN</div>
 
     <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required />
+      <div>
+        <label for="uemail"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" formControlName="email" />
+        <adm-error-message
+          [control]="formGroup.controls.email"
+        ></adm-error-message>
+      </div>
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required />
-
-      <button type="submit">LOGIN</button>
+      <div>
+        <label for="psw"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          formControlName="password"
+        />
+        <adm-error-message
+          [control]="formGroup.controls.password"
+        ></adm-error-message>
+      </div>
+      <button type="button" (click)="submitForm()">LOGIN</button>
       <label class="remember">
         <input type="checkbox" checked="checked" name="remember" /> Remember me
       </label>

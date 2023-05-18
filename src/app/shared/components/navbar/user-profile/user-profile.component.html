@@ -1,0 +1,30 @@
+<ul>
+  <li>
+    <i class="bx bx-user-circle bx-md"></i>
+    <ul>
+      <li class="sub--item-user">
+        <div class="sub--item-icons">
+          <i class="bx bxs-user-rectangle bx-md"></i>
+        </div>
+        <div class="sub--item-description">
+          <p>{{ user?.firstName }}</p>
+          <p>{{ user?.email }}</p>
+        </div>
+      </li>
+      <li class="sub--item">
+        <span class="sub--item-icons">
+          <i class="bx bxs-user-account bx-sm"></i>
+        </span>
+        <p>Profile</p>
+      </li>
+      <li class="sub--item">
+        <button type="button" (click)="logout()">
+          <span class="sub--item-icons">
+            <i class="bx bx-log-in bx-sm"></i>
+          </span>
+          <p>Logout</p>
+        </button>
+      </li>
+    </ul>
+  </li>
+</ul>

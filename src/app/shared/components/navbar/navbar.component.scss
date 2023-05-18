@@ -8,9 +8,28 @@ header {
   border-bottom: 0.0625rem solid #d2d2d7;
   height: 3.75rem;
   padding: 0.625rem;
+  z-index: 10;
 
   nav {
-    display: block;
+    display: flex;
     width: 100%;
+
+    .nav--container-left,
+    .nav--container-right {
+      flex: 1;
+      padding: 0 1rem;
+    }
+
+    .nav--container-left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .nav--container-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
   }
 }
