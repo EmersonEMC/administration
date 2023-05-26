@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'sass/imports.scss';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 *,
@@ -12,6 +12,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background: var(--background);
+  transition: all 0.5s ease;
 }
 
 body {
@@ -26,5 +28,5 @@ body {
   font-size: 0.75rem;
   line-height: 0.875rem;
   overflow: auto;
-  color: #6e6e73;
+  color: var(--color);
 }

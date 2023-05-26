@@ -3,7 +3,7 @@ aside {
   position: fixed;
   top: 0;
   left: 0;
-  border: 0.0625rem solid #d2d2d7;
+  border-right: 0.0625rem solid var(--color-7);
   width: 12.5rem;
   height: 100vh;
 
@@ -14,8 +14,8 @@ aside {
 
     .icon {
       border-radius: 0.25rem;
-      background-color: #6b51fa;
-      color: #ffffff;
+      background-color: var(--color-active);
+      color: var(--color-1);
       font-weight: bold;
       padding: 0.85rem 1rem;
     }
@@ -42,7 +42,7 @@ aside {
         width: 100%;
         padding: 0.5rem;
         text-decoration: none;
-        color: #6e6e73;
+        color: var(--color-9);
         border-radius: 0.25rem;
         font-weight: bold;
 
@@ -51,12 +51,12 @@ aside {
         }
 
         &:hover {
-          background-color: #f6f4ff;
+          background-color: var(--color-8);
         }
 
         &.active {
-          background-color: #6b51fa;
-          color: #ffffff;
+          background-color: var(--color-active);
+          color: var(--color-1);
         }
       }
     }

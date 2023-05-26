@@ -14,9 +14,8 @@ ul {
     ul {
       flex-direction: column;
       position: absolute;
-      background-color: white;
+      background-color: var(--background-card);
       align-items: flex-start;
-      transition: all 0.5s ease;
       width: 18rem;
       right: 0;
       top: 3.7rem;
@@ -24,7 +23,7 @@ ul {
       gap: 0;
       padding: 1rem;
       opacity: 0;
-      box-shadow: 0px 0px 100px rgba(20, 18, 18, 0.25);
+      box-shadow: var(--box-shadow-card);
       display: none;
 
       &::before {
@@ -39,13 +38,19 @@ ul {
       &::after {
         content: '';
         position: absolute;
-        right: 0.5625rem;
-        top: -0.75rem;
-        width: 0;
-        height: 0;
-        border-left: 0.5rem solid transparent;
-        border-right: 0.5rem solid transparent;
-        border-bottom: 0.75rem solid white;
+        right: 1.1rem;
+        top: 0.0625rem;
+        background-color: var(--background-card);
+        width: 1rem;
+        height: 1rem;
+        box-shadow: var(--box-shadow-card);
+        transform: translate(50%, -50%) rotate(316deg);
+        clip-path: polygon(
+          -1.25rem -1.25rem,
+          calc(100% + 1.25rem) -1.25rem,
+          calc(100% + 1.25rem) calc(100% + 1.25rem)
+        );
+        
       }
 
       li {
@@ -74,7 +79,7 @@ ul {
               display: flex;
               width: 100%;
               font-size: 0.85rem;
-              color: #888888;
+              color: var(--color-4);
               font-weight: 500;
               margin: 0;
 
@@ -99,7 +104,7 @@ ul {
             display: flex;
             gap: 0.725rem;
             text-align: left;
-            color: #6e6e73;
+            color: var(--color);
 
             &:active,
             &:focus {
@@ -110,23 +115,23 @@ ul {
 
           p {
             font-size: 0.85rem;
-            color: #888888;
+            color: var(--color-4);
             font-weight: 500;
             margin: 0.4rem 0;
             flex: 1;
           }
 
           &:hover {
-            background-color: #f6f4ff;
+            background-color: var(--color-8);
 
             .sub--item-icons {
-              color: #6b51fa;
-              transform: scale(1.08) translateY(-2px);
+              color: var(--color-active);
+              transform: scale(1.08) translateY(-0.125rem);
               cursor: pointer;
             }
 
             p {
-              color: #000;
+              color: var(--color-5);
               cursor: pointer;
             }
           }

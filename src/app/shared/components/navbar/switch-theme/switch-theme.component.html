@@ -1,0 +1,9 @@
+<div class="container__switch" [formGroup]="form">
+  <input
+    type="checkbox"
+    id="switch"
+    formControlName="mode"
+    (change)="onToggleTheme($event.target)"
+  />
+  <label for="switch">Toggle</label>
+</div>
