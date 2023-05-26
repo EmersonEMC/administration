@@ -10,12 +10,18 @@
         background: var(--background-toggle-button);
 
         &::after {
+          width: 1.25rem;
           left: calc(100% - 0.3125rem);
           -webkit-transform: translateX(-100%);
           -moz-transform: translateX(-100%);
           -ms-transform: translateX(-100%);
           -o-transform: translateX(-100%);
           transform: translateX(-100%);
+        }
+
+        &::before {
+          background-image: url('/assets/bxs-sun.svg');
+          left: 0.25rem;
         }
       }
     }
@@ -47,6 +53,22 @@
       position: absolute;
       top: 0.3125rem;
       left: 0.25rem;
+      transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
+    }
+
+    &::before {
+      content: '';
+      background-image: url('/assets/bxs-moon.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 1.25rem;
+      height: 1.25rem;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      position: absolute;
+      top: 0.3125rem;
+      right: 0.25rem;
       transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
     }
   }

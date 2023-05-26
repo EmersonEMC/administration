@@ -9,6 +9,7 @@
   --color-7: #d2d2d7;
   --color-8: #f6f4ff;
   --color-9: #6e6e73;
+  --color-10: #232323;
 
   /*--THEME--*/
   --color: var(--color-9);
@@ -17,7 +18,7 @@
 
   /*--TOGGLE--*/
   --background-toggle-theme: var(--background);
-  --background-toggle-button: var(--color);
+  --background-toggle-button: var(--color-10);
 
   /*--CARD--*/
   --background-card: var(--background);

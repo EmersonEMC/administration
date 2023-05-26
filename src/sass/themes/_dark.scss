@@ -9,11 +9,12 @@
   --color-7: #d2d2d7;
   --color-8: #f6f4ff;
   --color-9: #6e6e73;
+  --color-10: #232323;
 
   /*--THEME--*/
   --color: var(--color-1);
   --color-active: var(--color-6);
-  --background: #232323;
+  --background: var(--color-10);
 
   /*--TOGGLE--*/
   --background-toggle-theme: var(--background);

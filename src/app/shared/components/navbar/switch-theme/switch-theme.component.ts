@@ -40,20 +40,20 @@ export class SwitchThemeComponent implements OnInit, OnDestroy {
   }
 
   private toggleLightTheme(): void {
-    this.form.controls.mode.patchValue(true);
+    this.form.controls.mode.patchValue(false);
   }
 
   private toggleDarkTheme(): void {
-    this.form.controls.mode.patchValue(false);
+    this.form.controls.mode.patchValue(true);
   }
 
   private setTheme(theme: boolean): void {
     if (theme) {
-      this._themeService.setTheme('light');
+      this._themeService.setTheme('dark');
       return;
     }
 
-    this._themeService.setTheme('dark');
+    this._themeService.setTheme('light');
   }
 
   ngOnDestroy(): void {
