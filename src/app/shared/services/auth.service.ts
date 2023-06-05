@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { User } from '../classes/user';
-import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { CookieService } from './cookie.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,11 +10,8 @@ export class AuthService {
   private userSubject: BehaviorSubject<User | null>;
   public user: Observable<User | null>;
 
-  constructor(private router: Router, private http: HttpClient) {
-    const storageUser: string | null = localStorage.getItem('user');
-    const user: User | null = storageUser
-      ? (JSON.parse(storageUser) as User)
-      : null;
+  constructor(private readonly _cookieService: CookieService) {
+    const user: User | null = this._cookieService.getCookieUser();
 
     this.userSubject = new BehaviorSubject(user);
 
@@ -26,20 +22,21 @@ export class AuthService {
     return this.userSubject.value;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   login(email: string, password: string): Observable<User> {
     const user = new User({
-      id: 'jahsdjlhasjdhjasdh',
+      id: 'fbe8d304-46b8-413d-b0da-06d123567260',
       email,
-      password,
       firstName: 'Emerson',
       lastName: 'Costa',
-      token: 'Teste',
+      token:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
     });
 
-    localStorage.setItem('user', JSON.stringify(user));
+    this._cookieService.setUser(user);
     this.userSubject.next(user);
     return of(user);
-    // return this.http
+    // return this._http
     //   .post<User>(`${environment.apiUrl}/users/authenticate`, {
     //     username,
     //     password,
@@ -54,8 +51,7 @@ export class AuthService {
   }
 
   logout(): void {
-    localStorage.removeItem('user');
+    this._cookieService.setUser(null);
     this.userSubject.next(null);
-    void this.router.navigate(['/login']);
   }
 }
